@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">Task<span>Flow</span></div>
+        <p>Plan your day. Get things done.</p>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                <h1>My Tasks</h1>
+                <p class="muted">A little progress every day adds up.</p>
+            </div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <span>Total Tasks</span>
+                <strong id="total-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Pending</span>
+                <strong id="pending-count">0</strong>
+            </article>
+            <article class="stat-card">
+                <span>Completed</span>
+                <strong id="completed-count">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <h2>Add a New Task</h2>
+
+            <form id="task-form">
+                <label for="title">Task title</label>
+                <input
+                    id="title"
+                    name="title"
+                    type="text"
+                    minlength="2"
+                    maxlength="120"
+                    placeholder="e.g. Complete my assignment"
+                    required
+                >
+
+                <label for="description">Description (optional)</label>
+                <textarea
+                    id="description"
+                    name="description"
+                    maxlength="500"
+                    rows="3"
+                    placeholder="Add some details..."
+                ></textarea>
+
+                <div class="form-row">
+                    <div>
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option value="Low">Low</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="dueDate">Due date (optional)</label>
+                        <input id="dueDate" name="dueDate" type="date">
+                    </div>
+                </div>
+
+                <button class="primary-btn" type="submit" id="submit-btn">
+                    + Add Task
+                </button>
+                <button class="secondary-btn hidden" type="button" id="cancel-edit">
+                    Cancel Edit
+                </button>
+
+                <p id="form-message" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <h2>Your Tasks</h2>
+
+                <label class="filter-label" for="filter">
+                    Filter:
+                    <select id="filter">
+                        <option value="all">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </label>
+            </div>
+
+            <p id="loading" class="muted">Loading tasks...</p>
+            <p id="empty-message" class="muted hidden">
+                No tasks here yet. Add your first task above!
+            </p>
+            <div id="task-list" class="task-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>TaskFlow — Built with HTML, CSS, JavaScript, Node.js & MongoDB</p>
+    </footer>
+</body>
+</html>

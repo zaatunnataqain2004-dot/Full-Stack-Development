@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub | Online Learning</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">L</span>
+      LearnHub
+    </a>
+    <span class="tagline">Learn something new every day</span>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">YOUR LEARNING SPACE</p>
+        <h1>Learn at your own pace.</h1>
+        <p>Discover courses, learn new skills, and track your progress.</p>
+      </div>
+      <div class="welcome-icon">🎓</div>
+    </section>
+
+    <section class="panel profile">
+      <div>
+        <h2>Your learner profile</h2>
+        <p>Enter your details to enroll and save your progress.</p>
+      </div>
+      <form id="profileForm" class="profile-form">
+        <input id="studentName" placeholder="Your name" maxlength="100" required>
+        <input id="studentEmail" type="email" placeholder="Your email" required>
+        <button type="submit">Save Profile</button>
+      </form>
+      <p id="profileMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span>Available Courses</span>
+        <strong id="courseCount">0</strong>
+        <span class="stat-icon">📚</span>
+      </article>
+      <article class="stat-card">
+        <span>My Enrollments</span>
+        <strong id="enrollmentCount">0</strong>
+        <span class="stat-icon">🎯</span>
+      </article>
+      <article class="stat-card">
+        <span>Lessons Completed</span>
+        <strong id="completedCount">0</strong>
+        <span class="stat-icon">✅</span>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE AND GROW</p>
+          <h2>Course catalog</h2>
+        </div>
+        <input id="searchInput" type="search"
+               placeholder="Search courses or instructors...">
+      </div>
+
+      <div id="categoryFilters" class="filters"></div>
+      <p id="courseMessage" class="message" role="status"></p>
+      <div id="courseGrid" class="course-grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR JOURNEY</p>
+          <h2>My learning</h2>
+        </div>
+      </div>
+      <p id="enrollmentMessage" class="message" role="status"></p>
+      <div id="enrollmentGrid" class="course-grid"></div>
+    </section>
+
+    <section id="lessonSection" class="panel lesson-section" hidden>
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">COURSE MATERIAL</p>
+          <h2 id="lessonCourseTitle">Lessons</h2>
+        </div>
+        <button id="closeLessons" class="button-secondary" type="button">
+          Close
+        </button>
+      </div>
+      <div id="lessonList" class="lesson-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>LearnHub · Online Learning Management System</p>
+    <p>Built with HTML, CSS, JavaScript, Node.js and MongoDB</p>
+  </footer>
+</body>
+</html>

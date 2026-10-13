@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>Student Management</h1>
+      <p>Manage your student records in one place.</p>
+    </div>
+    <div class="logo">SMS</div>
+  </header>
+
+  <main class="container">
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Students</span>
+        <h2 id="totalStudents">0</h2>
+      </div>
+      <div class="stat-card">
+        <span>Courses Represented</span>
+        <h2 id="totalCourses">0</h2>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2 id="formHeading">Add New Student</h2>
+
+      <form id="studentForm">
+        <div class="form-grid">
+          <label>
+            Full Name
+            <input id="name" type="text" maxlength="100" required>
+          </label>
+
+          <label>
+            Roll Number
+            <input id="rollNumber" type="text" maxlength="30" required>
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" maxlength="254" required>
+          </label>
+
+          <label>
+            Course
+            <input id="course" type="text" maxlength="100"
+                   placeholder="e.g. MCA" required>
+          </label>
+
+          <label>
+            Year
+            <select id="year" required>
+              <option value="">Select year</option>
+              <option value="1">Year 1</option>
+              <option value="2">Year 2</option>
+              <option value="3">Year 3</option>
+              <option value="4">Year 4</option>
+              <option value="5">Year 5</option>
+              <option value="6">Year 6</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="submit" id="saveButton">Add Student</button>
+          <button type="button" id="cancelButton" class="secondary"
+                  hidden>Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="table-heading">
+        <h2>Student Records</h2>
+        <input id="search" type="search"
+               placeholder="Search name, roll number, course...">
+      </div>
+
+      <p id="message" role="status"></p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll Number</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Year</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentTable">
+            <tr>
+              <td colspan="6">Loading students...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Student Management System · Built with HTML, CSS and JavaScript</footer>
+</body>
+</html>
